@@ -1,0 +1,12 @@
+
+Class Money 
+{
+	private:
+
+
+
+	public: 
+
+
+
+};
