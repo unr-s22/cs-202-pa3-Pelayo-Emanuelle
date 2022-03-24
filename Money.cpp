@@ -4,8 +4,8 @@
 
 Money::Money()
 {
-	dollars = 0; 
-	cents = 0;
+	dollars = 0; //assigning default value of 0 to dollars
+	cents = 0; //assigning default value of 0 to cents 
 
 }
 
