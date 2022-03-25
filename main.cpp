@@ -60,12 +60,30 @@ int main()
 //testing + operator 
 /*
 	Money m(110,10);
-	Money n(110, 10);
+	Money n(110, 99);
 	Money p = m+n;
 	std::cout << p <<std::endl;
 */
 
+//testing - operator 
+/*
+	Money m(110,10);
+	Money n(50, 20);
+	Money p = m-n;
+	std::cout << p <<std::endl;
+*/
 
+//checking <=, >=
+/*
+	Money m(100,10);
+	Money n(100, 12);
 
+	if (n >= m)
+		std::cout <<  "ye" << std::endl;
+	else
+		std::cout << "nah" << std::endl;
+*/
+
+	return 0;
 
 }
