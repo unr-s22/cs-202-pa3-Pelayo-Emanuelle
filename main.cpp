@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Money.cpp"
-
+#include "Money.h"
+#include "Account.h"
 
 
 int main()
@@ -82,6 +82,17 @@ int main()
 		std::cout <<  "ye" << std::endl;
 	else
 		std::cout << "nah" << std::endl;
+*/
+
+/*checking deposit update
+	Money start(50,0);
+	Account bank(start);
+	Money check(25,50);
+	bank.makeDeposit(check);
+	bank.update();
+	Money check2(10,15);
+	bank.makeDeposit(check2);
+	bank.update();
 */
 
 	return 0;
