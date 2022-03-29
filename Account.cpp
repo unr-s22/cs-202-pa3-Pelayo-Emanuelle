@@ -11,24 +11,34 @@ void Account::makeDeposit(Money m) {
 
 //withdrawals
 
+void Account::makeWithdrawal(Money m) //works
+{
+	withdrawals.push_back(m);
+	needsUpdate = true;
+
+}
+
 
 void Account::update() {
 	//std::cout << money << std::endl;
 	for(; dUpdate < deposits.size(); dUpdate++) {
 		money = money + deposits[dUpdate];
 	}
-	
-	
-
-
-	//withdraw update
-
-
-
-
-
-
-	//std::cout << money << std::endl;
-
-	needsUpdate = false;
 }
+
+
+
+
+
+void Account::withdrawUpdate()
+{
+	
+	for (; wUpdate < withdrawals.size(); wUpdate++)
+	{
+		money = money - withdrawals[wUpdate];
+	}
+	
+}
+
+	//needsUpdate = false;
+

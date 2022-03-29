@@ -1,11 +1,14 @@
-man: main.cpp Account.o Money.o
-	g++ main.cpp -o man Account.o Money.o
+main: main.o Account.o Money.o
+	g++ -std=c++11  -o main main.o Account.o Money.o
+
+main.o: main.cpp
+	g++ -std=c++11 main.cpp -c main.cpp
 
 Account.o: Account.cpp
-	g++ Account.cpp -c
+	g++ -std=c++11 Account.cpp -c Account.cpp
 
 Money.o: Money.cpp
-	g++ Money.cpp -c
+	g++ -std=c++11 Money.cpp -c Money.cpp
 
 clean:
-	rm man *.o
+	rm main *.o
