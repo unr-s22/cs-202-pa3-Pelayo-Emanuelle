@@ -10,21 +10,22 @@ private:
 	Money money;
 	bool needsUpdate = false;
 	int dUpdate = 0; //index for deposits that have been updated in final balance, only the deposits after the index are calculated in update function
-	int wUpdate = 0; //index for withdrawal updates
+	int wUpdate = 0; //index for updated withdrawals
 	std::vector<Money> deposits;
 	std::vector<Money> withdrawals;
-	//void update();  //update main money instance with new deposits and withdrawals, call in << overload
+	void update();  //update main money instance with new deposits and withdrawals, call in << overload
 
 public:
 
 	Account(Money m);
 	void makeDeposit(Money m); 
 	void makeWithdrawal(Money m);
-	void withdrawUpdate();
-	void update();
+	//void update();
 
 	friend std::ostream& operator << (std::ostream& output, Account& account) // << overload that prints the account statement (works)
 	{
+		if(account.needsUpdate == true)
+			account.update();
 		
 		output << "Account Details" << std::endl;
 
@@ -34,7 +35,7 @@ public:
 
 		output << "--------------------------" << std::endl;
 
-		output << "Number of Deposits:" << " " << account.dUpdate << std::endl; //displaying total number of deposits 
+		output << "Number of Deposits:" << " " << account.deposits.size() << std::endl; //displaying total number of deposits 
 
 		output << "--------------------"<< std::endl;
 
@@ -45,7 +46,7 @@ public:
 		}
 
 
-		output << "Number of withdrawals: " << account.wUpdate << std::endl; //displaying number of withdrawals 
+		output << "Number of Withdrawals: " << account.withdrawals.size() << std::endl; //displaying number of withdrawals 
 
 		output << "--------------------"<< std::endl;
 
@@ -53,7 +54,7 @@ public:
 		//int w for counting up to size of withdrawals vector
 		for(int w = 0; w < account.withdrawals.size(); w++) //displaying the number of the withdrawal before the deposit total (+1 b/c index starts at 0)
 		{
-			output << "(" << w+1 << ")" << " " << account.deposits[w] << std::endl;
+			output << "(" << w+1 << ")" << " " << account.withdrawals[w] << std::endl;
 		}
 
 		

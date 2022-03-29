@@ -18,35 +18,20 @@ int main()
 
 	//depositing all three quantities 
 	bank.makeDeposit(deposit1); 
-	bank.update();
 	bank.makeDeposit(deposit2);
-	bank.update();
 	bank.makeDeposit(deposit3);
-	bank.update();
 
-	std::cout << bank << std::endl;
+	std::cout << bank << std::endl;	//balance updated when << used
 
 	Money withdrawal1(300,10); // $300.10 to be withdrawn
 	Money withdrawal2(201,34); // 201.34 to be withdrawn 
 
 	//withdrawing both quantities 
 	bank.makeWithdrawal(withdrawal1);
-	bank.withdrawUpdate();
 	bank.makeWithdrawal(withdrawal2);
-	bank.withdrawUpdate();
 
 	//printing account again to the terminal 
 	std::cout << bank << std::endl;
-
-
-	return 0;
-
-}
-
-
-
-
-
 
 
 
@@ -129,32 +114,8 @@ int main()
 		std::cout << "nah" << std::endl;
 */
 
-/*checking deposit update
-	Money start(50,0);
-	Account bank(start);
-	Money check(25,50);
-	bank.makeDeposit(check);
-	bank.update();
-	Money check2(10,15);
-	bank.makeDeposit(check2);
-	bank.update();
 
-*/
+	return 0;
 
-//checking withdrawal update, << overload. (both work)
-
-/*
-	Money start(50,0);
-	Account bank(start);
-	Money check(25, 0);
-	bank.makeDeposit(check);
-	bank.makeWithdrawal(check);
-	bank.withdrawUpdate();
-
-	//std::cout << bank << std::endl;
-*/
-
-
-
-
+}
 

@@ -24,21 +24,13 @@ void Account::update() {
 	for(; dUpdate < deposits.size(); dUpdate++) {
 		money = money + deposits[dUpdate];
 	}
-}
-
-
-
-
-
-void Account::withdrawUpdate()
-{
 	
 	for (; wUpdate < withdrawals.size(); wUpdate++)
 	{
 		money = money - withdrawals[wUpdate];
 	}
-	
+
+	needsUpdate = false;
 }
 
-	//needsUpdate = false;
 
