@@ -11,4 +11,4 @@ Money.o: Money.cpp
 	g++ -std=c++11 Money.cpp -c Money.cpp
 
 clean:
-	rm -f main *.o
+	rm -f pa3 *.o
